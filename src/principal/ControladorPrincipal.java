@@ -11,6 +11,7 @@ public class ControladorPrincipal {
 	private PantallaPrincipal pantalla;
 	private ControladorMarco marco;
 	
+	Color sobre = new Color(0xFFBCFF);
 	
 	public ControladorPrincipal(PantallaPrincipal pantallaPrincipal) {
 		pantalla = pantallaPrincipal;
@@ -21,6 +22,7 @@ public class ControladorPrincipal {
 
 	public void miPerfil() {
 		marco.anadirPantalla(new p01Perfil.PantallaPerfil(marco));
+		relax();
 	}
 
 
@@ -31,6 +33,7 @@ public class ControladorPrincipal {
 					   + "Conéctate (o Registrate) en el apartado 'Perfil'.");
 		} else {
 			marco.anadirPantalla(new p02BuscarSorteos.PantallaBuscarSorteos(marco));
+			relax();
 		}
 	}
 
@@ -42,6 +45,7 @@ public class ControladorPrincipal {
 					   + "Conéctate (o Registrate) en el apartado 'Perfil'.");
 		} else {
 			marco.anadirPantalla(new p03MisSorteos.PantallaMisSorteos(marco));
+			relax();
 		}
 	}
 
@@ -53,38 +57,39 @@ public class ControladorPrincipal {
 					   + "Conéctate (o Registrate) en el apartado 'Perfil'.");
 		} else {
 			marco.anadirPantalla(new p04MisTickets.PantallaMisTickets(marco));
+			relax();
 		}
 	}
 
 
 	public void sobreMiPerfil() {
 		relax();
-		pantalla.lPerfil.setBackground(Color.LIGHT_GRAY);
+		pantalla.pUsuario.setBackground(sobre);
 	}
 
 	public void sobreBuscarSorteos() {
 		relax();
-		pantalla.lBuscar.setBackground(Color.LIGHT_GRAY);
+		pantalla.pBuscar.setBackground(sobre);
 	}
 
 
 	public void sobreMisSorteos() {
 		relax();
-		pantalla.lMisSorteos.setBackground(Color.LIGHT_GRAY);
+		pantalla.pSorteos.setBackground(sobre);
 	}
 
 
 	public void sobreMisTickets() {
 		relax();
-		pantalla.lMisTickets.setBackground(Color.LIGHT_GRAY);
+		pantalla.pTickets.setBackground(sobre);
 	}
 
 
 	public void relax() {
-		pantalla.lPerfil.setBackground(Color.WHITE);
-		pantalla.lBuscar.setBackground(Color.WHITE);
-		pantalla.lMisSorteos.setBackground(Color.WHITE);
-		pantalla.lMisTickets.setBackground(Color.WHITE);
+		pantalla.pUsuario.setBackground(Color.WHITE);
+		pantalla.pBuscar.setBackground(Color.WHITE);
+		pantalla.pSorteos.setBackground(Color.WHITE);
+		pantalla.pTickets.setBackground(Color.WHITE);
 	}
 	
 /*	private void resetOrden() {
